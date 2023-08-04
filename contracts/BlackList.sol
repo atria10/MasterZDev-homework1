@@ -8,12 +8,12 @@ contract BlackList is Ownable {
     mapping(address => bool) public isBlackListed;
 
     // function that allows the Contract Owner to add a user address to the blackList
-    function addBlackList(address _deniedUser) public onlyOwner {
+    function addBlackList(address _deniedUser) external onlyOwner {
         isBlackListed[_deniedUser] = true;
     }
 
     // function that allows the Contract Owner to remove a user address to the blackList
-    function removeBlackList(address _clearUser) public onlyOwner {
+    function removeBlackList(address _clearUser) external onlyOwner {
         isBlackListed[_clearUser] = false;
     }
 
